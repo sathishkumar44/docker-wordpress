@@ -1,6 +1,6 @@
 cd /
 cd /var/www/html/Immidart/docker-wordpress
 docker build -t docker-wordpress /var/www/html/Immidart/docker-wordpress
-docker run -v /var/lib/mysql --name=my_datastore1 -d busybox echo 'My Datastore'
-docker run --name my_mysql -e MYSQL_ROOT_PASSWORD=test123 --volumes-from my_datastore1 -d mysql
-docker run --name docwordpress --link=my_mysql:mysql -p 7777:80 -v /var/www/html/Immidart/docker-wordpress/src/wordpress/:/var/www/html -d wordpress
+docker run -v /var/lib/mysql --name=my_datastore2 -d busybox echo 'My Datastore'
+docker run --name my_mysql -e MYSQL_ROOT_PASSWORD=test123 --volumes-from my_datastore2 -d mysql
+docker run --name docwordpress --link=my_mysql:mysql -p 7777:80 -v /var/www/html/Immidart/docker-wordpress/src/:/var/www/html -d wordpress
