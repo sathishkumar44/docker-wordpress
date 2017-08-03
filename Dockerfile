@@ -1,4 +1,4 @@
 FROM wordpress
 FROM mysql
-COPY /var/www/html/ src/wordpress
+COPY ["wordpress","/src"]
 EXPOSE 7777
